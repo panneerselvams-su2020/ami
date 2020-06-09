@@ -1,0 +1,33 @@
+
+version: 2
+jobs:
+  validate:
+    docker:
+      - image: hashicorp/packer:1.1.1
+    working_directory: ~/packer
+    steps:
+      - checkout
+      - run:
+        name: Validate ami.json
+        command: packer validate ami.json
+
+  ami-build:
+    docker:
+      - image: hashiCorp/packer:1.1.1
+    steps:
+      - checkout
+      - run:
+        name: Build ami.json
+        command: packer build ami.json  
+
+workflows:
+  version: 2
+  packer:
+    jobs:
+      - validate
+      - ami-build:
+          context: AWS EC2
+    
+
+
+          
