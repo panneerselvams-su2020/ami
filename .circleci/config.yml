@@ -1,21 +1,18 @@
 
 version: 2
 jobs:
-
   ami-build:
     docker:
       - image: hashiCorp/packer:1.1.1
     steps:
       - checkout
       - run:
-        name: Build ami.json
-        command: packer build ami.json  
-
+          name: Build ami.json
+          command: packer build ami.json  
 workflows:
   version: 2
   packer:
-    jobs:
-    
+    jobs:   
       - ami-build:
           context: Aws_EC2
             
