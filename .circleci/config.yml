@@ -4,6 +4,7 @@ jobs:
   ami-build:
     docker:
       - image: hashiCorp/packer:1.1.1
+    working_directory: ~/packer  
     steps:
       - checkout
       - run:
