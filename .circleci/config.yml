@@ -4,7 +4,13 @@ jobs:
   ami-build:
     docker:
       - image: hashiCorp/packer:1.1.1
-    working_directory: ~/packer  
+    working_directory: ~/packer
+    - run:
+          name: Validate ami.json
+          command: packer validate ami.json
+  ami-build:
+    docker:
+      - image: hashicorp/packer:1.1.1  
     steps:
       - checkout
       - run:
