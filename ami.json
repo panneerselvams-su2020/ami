@@ -18,6 +18,7 @@
       "source_ami": "{{user `source_ami`}}",
       "ssh_username": "{{user `ssh_username`}}",
       "ami_name": "csye6225_a4_{{timestamp}}",
+      "ami_users": "{{user `ami_users`}}",
       "ami_description": "Assignment 4 AMI Sridhar Prasad Panneerselvam",
       "launch_block_device_mappings":[{
           "device_name": "/dev/sda1",
@@ -42,6 +43,7 @@
         "sudo apt-get update",
         "sudo apt-get install openjdk-8-jre-headless maven -y",
         "sudo npm install -g @angular/cli",
-        "sudo apt install unzip"
+        "sudo apt install unzip",
+        "sudo apt-get install apache2 -y"
       ]
   }]}
