@@ -1,16 +1,10 @@
 
 version: 2
 jobs:
-  ami-build:
+  buildami:
     docker:
-      - image: hashiCorp/packer:1.1.1
-    working_directory: ~/packer
-    - run:
-          name: Validate ami.json
-          command: packer validate ami.json
-  ami-build:
-    docker:
-      - image: hashicorp/packer:1.1.1  
+      - image: hashicorp/packer:1.1.1
+    working_directory: ~/packer  
     steps:
       - checkout
       - run:
@@ -18,9 +12,9 @@ jobs:
           command: packer build ami.json  
 workflows:
   version: 2
-  packer:
+  amipacker:
     jobs:   
-      - ami-build:
+      - buildami:
           context: ec2
             
 
