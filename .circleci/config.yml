@@ -15,7 +15,7 @@ workflows:
   packer:
     jobs:   
       - ami-build:
-          context: Aws_EC2
+          context: ec2
             
 
 
