@@ -5,8 +5,8 @@
       "aws_region": "{{env `aws_region`}}",
       "subnet_id":"{{env `subnet_id`}}",
       "source_ami":"{{env `source_ami`}}",
-      "ssh_username":"{{env `ssh_username`}}",
-      "ami_users":"{{env `ami_users`}}"
+      "ami_users":"{{env `ami_users`}}",
+      "ssh_username":"{{env `ssh_username`}}"
     },
     "builders": [{
       "type": "amazon-ebs",
