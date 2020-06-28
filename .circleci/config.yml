@@ -9,14 +9,13 @@ jobs:
       - checkout
       - run:
           name: Build ami.json
-          command: packer build ami.json  
+          command: packer build ami.json
 workflows:
   version: 2
   amipacker:
     jobs:   
-      - buildami:
-          context: ec2
+      - buildami
             
 
-
+    
           

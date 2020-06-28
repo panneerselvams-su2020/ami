@@ -29,21 +29,28 @@
       }],
     "provisioners": [{
       "type": "shell",
-      "environment_vars":[
-          "FOO=foo"
-      ],
+      
       "inline": [
         "sudo apt-get update",
-        "sudo apt-get install curl",
+        "sudo apt-get install curl -y",
         "curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -",
         "sudo apt-get install nodejs -y",
         "node -v",
         "npm -v",
         "sudo add-apt-repository ppa:openjdk-r/ppa",
         "sudo apt-get update",
-        "sudo apt-get install openjdk-8-jre-headless maven -y",
-        "sudo npm install -g @angular/cli",
-        "sudo apt install unzip",
-        "sudo apt-get install apache2 -y"
+        "sudo apt-get install openjdk-11-jre-headless maven -y",
+        "sudo npm install -g @angular/cli -y",
+        "sudo apt install unzip -y",
+        "sudo apt-get install apache2 -y",
+        "sudo apt-get update",
+        "sudo apt-get install ruby -y",
+        "sudo apt-get install wget -y",
+        "cd /home/ubuntu",
+        "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",
+        "chmod +x ./install",
+        "sudo ./install auto",
+        "sudo service codedeploy-agent start",
+        "sudo service codedeploy-agent status"
       ]
   }]}
