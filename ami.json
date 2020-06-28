@@ -44,6 +44,11 @@
         "sudo apt-get install openjdk-8-jre-headless maven -y",
         "sudo npm install -g @angular/cli",
         "sudo apt install unzip",
-        "sudo apt-get install apache2 -y"
+        "sudo apt-get install apache2 -y",
+        "sudo apt-get update",
+        "sudo apt-get install ruby",
+        "sudo apt-get install wget",
+        "cd /home/ubuntu/ ",
+        "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install"
       ]
   }]}
